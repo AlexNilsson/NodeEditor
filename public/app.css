@@ -1,0 +1,111 @@
+body { margin: 0;}
+
+svg {
+  background-color: #FFF;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+svg:not(.active):not(.ctrl) {
+  cursor: default;
+}
+
+path.link {
+  fill: none;
+  stroke: #000;
+  stroke-width: 4px;
+  cursor: default;
+}
+
+path.link.blue { stroke: #00d3f9; }
+path.link.red { stroke: #ff5356; }
+path.link.green { stroke: #19b395; }
+path.link.grey { stroke: #1f2c30; }
+path.link.black { stroke: #000; }
+
+svg:not(.active):not(.ctrl) path.link:not(.published) {
+  cursor: pointer;
+}
+
+svg.panning {
+  cursor: move;
+}
+
+path.link.selected {
+  stroke-dasharray: 10,2;
+}
+
+path.link.dragline {
+  pointer-events: none;
+}
+
+path.link.hidden {
+  stroke-width: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.node {
+  stroke-width: 1.5px;
+  cursor: default;
+}
+
+.button {
+  cursor: pointer;
+}
+
+.button.canvasControl:hover {
+  opacity: 0.5;
+}
+
+.button.canvasControl.disabled,
+.button.canvasControl.disabled:hover {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+
+circle.node.reflexive {
+  stroke: #000 !important;
+  stroke-width: 2.5px;
+}
+
+text.id {
+  text-anchor: middle;
+  font-weight: bold;
+}
+
+#canvasArea {
+  width: 100%;
+  height: 100%;
+}
+
+#nodeEditor {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+
+#nodeList {
+  position: absolute;
+  right: 0;
+  overflow-y: auto;
+  height: 100%;
+  border-left: 1px solid #ddd;
+  background-color: #fff;
+}
+
+#canvasControls {
+  position: absolute;
+}
+
+#canvasOverlay {
+  position: absolute;
+}
